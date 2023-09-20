@@ -21,6 +21,10 @@ public class MoneyTest {
         assertTrue(new Dollar(5).equals(new Dollar(5)));
         // $5は$6と等価でない
         assertFalse(new Dollar(5).equals(new Dollar(6)));
+        // CHF5は他のCHF5と等価である
+        assertTrue(new Franc(5).equals(new Franc(5)));
+        // CHF5はCHF6と等価でない
+        assertFalse(new Franc(5).equals(new Franc(6)));
     }
 
     @Test
