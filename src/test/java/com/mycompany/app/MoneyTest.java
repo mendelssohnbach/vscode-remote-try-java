@@ -21,29 +21,13 @@ public class MoneyTest {
         assertTrue(Money.dollar(5).equals(Money.dollar(5)));
         // $5は$6と等価でない
         assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-        // CHF5は他のCHF5と等価である
-        assertTrue(Money.franc(5).equals(Money.franc(5)));
-        // CHF5はCHF6と等価でない
-        assertFalse(Money.franc(5).equals(Money.franc(6)));
         // CHF5は＄5と等価でない
         assertFalse(Money.franc(5).equals(Money.dollar(5)));
-    }
-
-    @Test
-    public void testFrancMultiplication() {
-        Money five = Money.franc(5);
-        assertEquals(Money.franc(10), five.times(2));
-        assertEquals(Money.franc(15), five.times(3));
     }
 
     @Test
     public void testCurrency() {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
-    }
-
-    @Test
-    public void testDifferentClassEquality() {
-        assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
     }
 }
