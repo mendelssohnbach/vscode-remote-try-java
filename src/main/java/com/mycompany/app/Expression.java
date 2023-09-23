@@ -1,3 +1,5 @@
 package com.mycompany.app;
 
-interface Expression {}
+interface Expression {
+    Money reduce(String to);
+}
